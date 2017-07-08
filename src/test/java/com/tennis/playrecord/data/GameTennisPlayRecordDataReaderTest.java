@@ -33,4 +33,10 @@ public class GameTennisPlayRecordDataReaderTest {
         URL inputPath = this.getClass().getResource("/inputfiles/invalid_input.txt");
         dataReader.load((inputPath).getPath());
     }
+
+    @Test(expected = Exception.class)
+    public void testLoadZeroGameData() throws  Exception{
+        URL inputPath = this.getClass().getResource("/inputfiles/zero_game.txt");
+        dataReader.load((inputPath).getPath());
+    }
 }
