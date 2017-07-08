@@ -24,14 +24,14 @@ public class DefaultGameTennisPlayRecordDataReader implements GameTennisPlayReco
             while((line = reader.readLine()) != null){
 
                 if(line.matches("^GAME\\d:( (A|B))+")){
-                       String[] tmp = line.split(":");
+                       String[] tmp = line.split(": ");
 
                        GameRecord game = new GameRecord();
                        List<PlayRecord> plays = new ArrayList<PlayRecord>();
 
                        for (String play:
                                tmp[1].split(" ")) {
-                            plays.add(new PlayRecord(play));
+                           plays.add(new PlayRecord(play));
                        }
 
                        game.setPlays(plays);

@@ -20,7 +20,19 @@ public class GameTennisPlayRecordDataReaderTest {
     @Test
     public void testLoadSuccess() throws Exception{
         URL inputPath = this.getClass().getResource("/inputfiles/correct_input.txt");
-        Assert.assertNotNull(dataReader.load(inputPath.getPath()));
+
+        GameTennisPlayRecord record = dataReader.load(inputPath.getPath());
+
+        Assert.assertNotNull(record);
+        Assert.assertTrue(record.getGames().size() == 3);
+        Assert.assertTrue(record.getGames().get(0).getPlays().size() == 4);
+        Assert.assertTrue(record.getGames().get(1).getPlays().size() == 6);
+
+        Assert.assertTrue("A".equals(record.getGames().get(0).getPlays().get(0).getPlayerWin()));
+        Assert.assertTrue("A".equals(record.getGames().get(0).getPlays().get(1).getPlayerWin()));
+        Assert.assertTrue("A".equals(record.getGames().get(1).getPlays().get(0).getPlayerWin()));
+        Assert.assertTrue("B".equals(record.getGames().get(1).getPlays().get(1).getPlayerWin()));
+
     }
 
     @Test(expected = Exception.class)
