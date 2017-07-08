@@ -2,7 +2,8 @@ Remark:You must install maven and java before build and run this application.
 
 How to Build 
 --------------
-run command "mvn install". 
+run command as below 
+>mvn install. 
 
 How to Run
 --------------
