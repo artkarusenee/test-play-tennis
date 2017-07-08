@@ -4,7 +4,7 @@
   <artifactId>GameTennis</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  
+  <modelVersion>4.0.0</modelVersion>
   <name>GameTennis</name>
   <dependencies>
       <dependency>
